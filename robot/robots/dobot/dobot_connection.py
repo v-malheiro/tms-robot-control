@@ -72,12 +72,18 @@ class DobotConnection:
         """
         if self.dashboard_socket is not None:
             self.dashboard_socket.close()
+            self.dashboard_socket = None
 
         if self.feedback_socket is not None:
             self.feedback_socket.close()
+            self.feedback_socket = None
 
         if self.movement_socket is not None:
             self.movement_socket.close()
+            self.movement_socket = None
+
+        self.connected = False
+        return self.connected
 
     def __del__(self):
         self.close()
