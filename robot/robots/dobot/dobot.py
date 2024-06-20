@@ -72,8 +72,8 @@ class Dobot(Robot):
         return self.connected
 
     def disconnect(self):
-        # Not implemented yet.
-        pass
+        self.connected = self.connection.close()
+        return self.connected
 
     def is_connected(self):
         return self.connected
