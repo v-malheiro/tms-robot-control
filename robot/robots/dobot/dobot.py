@@ -72,6 +72,9 @@ class Dobot(Robot):
         return self.connected
 
     def disconnect(self):
+        self.connection.disable_robot()
+        print('Disabling robot...')
+        time.sleep(1)
         self.connected = self.connection.close()
         return self.connected
 
