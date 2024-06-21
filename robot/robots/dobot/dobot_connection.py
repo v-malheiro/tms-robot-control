@@ -119,6 +119,13 @@ class DobotConnection:
         """
         request = "EnableRobot()"
         return self._send_and_receive(self.dashboard_socket, request)
+    
+    def disable_robot(self):
+        """
+        Disable the robot.
+        """
+        request = "DisableRobot()"
+        return self._send_and_receive(self.dashboard_socket, request)
 
     def clear_error(self):
         """
